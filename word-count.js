@@ -9,7 +9,7 @@ export const countWords = (words) => {
   // an apostrophe followed immediately by a word char again; * for any number of times this group matches
   // 2. Populate res obj with mapping <word: cnt>
   let res = {}
-  words.toLowerCase().match(/[\w('\w{1)?]*/g).filter(Boolean).forEach((word) => {
+  words.toLowerCase().match(/\b[\w]+[']?[\w]?\b/g).filter(Boolean).forEach((word) => {
     if (res[word]) {
       res[word]+=1
     } else {
