@@ -131,4 +131,26 @@ describe('countWords', () => {
     };
     expect(countWords(",\n,one,\n ,two \n 'three'")).toEqual(expectedCounts);
   });
+
+  test('substrings from the beginningg', () => {
+    const expectedCounts = {
+      joe: 1,
+      "can't": 1,
+      tell: 1,
+      between: 1,
+      app: 1,
+      apple: 1,
+      and: 1,
+      a: 2,
+      "we're": 1,
+      going: 1,
+      to: 1,
+      have: 1,
+      bad: 1,
+      time: 1
+    };
+    expect(countWords("Joe can't tell between app, apple and a. We're going to have a bad time")).toEqual(
+        expectedCounts
+    );
+  });
 });
